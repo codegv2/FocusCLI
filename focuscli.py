@@ -274,4 +274,4 @@ while True:
         print(Fore.LIGHTBLUE_EX+"# Focus history cleared."+Fore.RESET)
     else:
         pass
-print(Fore.GREEN+"# FocusCLI exited successfuly."+Fore.RESET)
+print(Fore.GREEN+"# FocusCLI exited successfully."+Fore.RESET)
