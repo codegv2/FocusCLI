@@ -202,12 +202,15 @@ while True:
                 print(Fore.LIGHTBLUE_EX+"# You don't have any focus history yet!"+Fore.RESET)
                 break
             
+            reversed_json_data = list(dict(json_data).keys())
+            reversed_json_data.reverse()
+            
             while True:
                 p = []
                 pageDict = {}
                 arrayCount = 0
                 pageCount = 0
-                for k in json_data:
+                for k in reversed_json_data:
                     p.append(k)
                     arrayCount += 1
                     pageDict[f"{pageCount}"] = p
@@ -216,10 +219,10 @@ while True:
                         pageCount += 1
                         pass
                 break
-
+            
             print(Style.BRIGHT+"# # SESSIONS # #"+Style.RESET_ALL)
             print(Fore.LIGHTBLACK_EX+"___________________"+Fore.RESET)
-            for k in pageDict[str(page)]:
+            for k in pageDict[f"{page}"]:
                 name = json_data[k]["name"]
                 date = json_data[k]["date"]
                 hourstart = json_data[k]["hourstart"]
